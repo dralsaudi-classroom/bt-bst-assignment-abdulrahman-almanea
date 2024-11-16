@@ -7,11 +7,11 @@ public class TreeUser {
         }
 
         int count = 0;
-        Stack<BTNode<T>> stack = new Stack<>();
+        LinkedStack stack = new LinkedStack();
         stack.push(bt.root);
 
-        while (!stack.isEmpty()) {
-            BTNode<T> current = stack.pop();
+        while (!stack.empty()) {
+            BTNode<T> current = (BTNode<T>) stack.pop();
             bt.current = current; 
             if (bt.isLeaf()) {
                 count++;
