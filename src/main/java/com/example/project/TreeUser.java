@@ -12,7 +12,7 @@ public class TreeUser {
 
         while (!stack.isEmpty()) {
             BTNode<T> current = stack.pop();
-            bt.current = current; // Update the current node in the BT class to use isLeaf method
+            bt.current = current; 
             if (bt.isLeaf()) {
                 count++;
             }
