@@ -154,21 +154,30 @@ public class BST<T> {
 		return p;
 	}
 public int countNodesIn(int k) {
-    Node<T> current = root;
-    while (current != null && current.getKey() != k) {
-        if (k < current.getKey()) {
-            current = current.getLeftChild();
+    BSTNode<T> current = root;
+
+    while (current != null && current.key != k) {
+        if (k < current.key) {
+            current = current.left;
         } else {
-            current = current.getRightChild();
+            current = current.right;
         }
     }
-    
+
     if (current != null) {
         return countSubtreeNodes(current);
     } else {
         return 0; // This case shouldn't happen as k is assumed to exist
     }
 }
+
+private int countSubtreeNodes(BSTNode<T> node) {
+    if (node == null) {
+        return 0;
+    }
+    return 1 + countSubtreeNodes(node.left) + countSubtreeNodes(node.right);
+}
+
 
 private int countSubtreeNodes(Node<T> node) {
     if (node == null) {
