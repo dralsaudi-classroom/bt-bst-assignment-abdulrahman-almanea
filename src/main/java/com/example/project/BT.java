@@ -99,28 +99,23 @@ public class BT<T> {
 		return current.left == null && current.right == null;
 	}
 	public int countLeaves() {
-    if (root == null) {
-        return 0;
-    }
+		if (root == null){
+			return 0;
+		}
+		int count = 0; 
+		Stack<BTNode<T>> stack = new Stack<>();
+		stack.push(root); while (!stack.isEmpty()) {
+			BTNode<T> current = stack.pop();
+			if (current.left == null && current.right == null) {
+				count++; 
+			} if (current.right != null) {
+				stack.push(current.right); 
+			} 
+			if (current.left != null) {
+				stack.push(current.left); 
+			} 
+		} return count;
+	}
 
-    int count = 0;
-    Stack<Node<T>> stack = new Stack<>();
-    stack.push(root);
-
-    while (!stack.isEmpty()) {
-        Node<T> current = stack.pop();
-        if (current.getLeftChild() == null && current.getRightChild() == null) {
-            count++;
-        }
-        if (current.getRightChild() != null) {
-            stack.push(current.getRightChild());
-        }
-        if (current.getLeftChild() != null) {
-            stack.push(current.getLeftChild());
-        }
-    }
-
-    return count;
-}
 
 }
