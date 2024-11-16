@@ -104,7 +104,7 @@ public class BT<T> {
     }
 
     int count = 0;
-    Stack<BTNode<T>> stack = new Stack<>();
+    Stack<BTNode<T>> stack = new ArrayStack<T>;
     stack.push(root);
 
     while (!stack.isEmpty()) {
