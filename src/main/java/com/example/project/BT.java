@@ -104,11 +104,11 @@ public class BT<T> {
     }
 
     int count = 0;
-    Stack<BTNode<T>> stack = new ArrayStack<T>;
+    LinkedStack stack = new LinkedStack();
     stack.push(root);
 
-    while (!stack.isEmpty()) {
-        BTNode<T> current = stack.pop();
+    while (!stack.empty()) {
+        BTNode<T> current = (BTNode<T>) stack.pop();
         if (current.left == null && current.right == null) {
             count++;
         }
