@@ -179,11 +179,12 @@ private int countSubtreeNodes(BSTNode<T> node) {
 }
 
 
-private int countSubtreeNodes(Node<T> node) {
+private int countSubtreeNodes(BTNode<T> node) {
     if (node == null) {
         return 0;
     }
-    return 1 + countSubtreeNodes(node.getLeftChild()) + countSubtreeNodes(node.getRightChild());
+    return 1 + countSubtreeNodes(node.left) + countSubtreeNodes(node.right);
 }
+
 
 }
