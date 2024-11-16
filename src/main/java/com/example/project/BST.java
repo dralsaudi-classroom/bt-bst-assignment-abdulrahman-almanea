@@ -167,7 +167,7 @@ public int countNodesIn(int k) {
     if (current != null) {
         return countSubtreeNodes(current);
     } else {
-        return 0; // This case shouldn't happen as k is assumed to exist
+        return 0; 
     }
 }
 
